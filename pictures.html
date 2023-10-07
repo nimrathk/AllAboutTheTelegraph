@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="styles.css">
+		<title>Telegraph Pictures</title>
+
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			// Thumbnail image controls
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+				if (n > slides.length) { slideIndex = 1 }
+				if (n < 1) { slideIndex = slides.length }
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+			}
+		</script>
+	</head>
+	
+	<body>
+		<nav>
+			<a href="index.html">
+				<img src="logo.png" class="logo" alt="logo image" width="320" height="100">
+			</a>
+			<div>
+				<a href="index.html">Home</a>
+				<a href="facts.html">Facts</a>
+				<a href="primarySource.html">Primary Source</a>
+				<a href="pictures.html">Pictures</a>
+				<a href="movie.html">Movie</a>
+				<a href="faq.html">FAQs</a>
+				<a href="sources.html">Bibliography</a>
+			</div>
+		</nav>
+
+		<div class="HomeIntro">
+			<div class="Welcome">
+				<h1>Pictures</h1>
+				<h3>Click 1 of the 3 dots to see the pics</h3>
+				<h4>Use the arrows to switch between the pics</h4>
+			</div>
+
+			<div class="HomeImg">
+				<img src="telegraphMain.jpg" alt="home img" width="360" height="210">
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
+
+			<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 3</div>
+				<img src="FirstTelegraphImg.png" style="width:100%">
+				<br />
+				<div class="text">This is the “outgoing” paper tape that held the first message ever sent on the telegraph: “What hath God wrought?” This demonstration occurred after the U.S. Congress had funded Samuel Morse’s and Alfred Vail’s work on the telegraph, leading to the inventors showing the telegraph’s abilities on May 24, 1844. Morse sent this message from the Supreme Court Chamber’s wire (in the U.S. Capitol in Washington D.C) all the way to Vail at the Mount Clare railroad depot in Baltimore, Maryland. That day, four tapes of this message were created: this very paper strip that had the outgoing message sent from Washington D.C., the recording of the incoming message in Baltimore, a repeat-back tape sent from Baltimore back to Morse, and a recording of the message sent back to Washington D.C.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="RailwayTelegraphSketch.jpg" style="width:100%">
+				<div class="text">This is Samuel Morse’s sketch of the Railway Telegraph, which was put in place for railway signaling since the telegraph could send messages faster than trains moved. Morse’s design would notify the train dispatcher about the arrival and departure timings of a train on the railway line. The train dispatcher, even miles away from a train, could know its whereabouts and thus be able to supervise trains’ movements. This ensured that delays were reduced since the train schedules could be altered in advance due to the information that was provided instantly from the telegraph. A reduction in train delays would allow for increased transportation of goods and people, which would have aided the militaries in the Civil War.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="WilcoxLanding.jpg" style="width:100%">
+				<div class="text">An image of the field telegraph station in Wilcox’s Landing, Virginia in 1864. This was during Grant’s Wilderness Campaign in the eastern theater of the Civil War when the Union army was stationed at Wilcox’s Landing so that they could move south of the James river. The presence of the telegraph there illustrates the importance of this invention for both the Union and Confederate army in terms of communication and organization. As seen during this campaign, the Union army was able to use a coordinated attack against General Lee. This might have been because telegraph lines were utilized during the Civil War for their instant communication, so they allowed General Grant and President Lincoln to discuss military plans which would have contributed to the Union’s success in the war.
+				</div>
+			</div>
+
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+		<footer class="footer">
+			© All About the Telegraph by Nimrath K
+		</footer>
+	</body>
+
+
+</html>
